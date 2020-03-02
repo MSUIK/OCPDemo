@@ -4,14 +4,16 @@ using System.Text;
 
 namespace OCPLibraty
 {
-    public class Accounts : IAccounts
+    public class MangerAccounts : IAccounts
     {
         public EmployModel Create(IApplicentModel person)
         {
             EmployModel output = new EmployModel();
             output.FirstName = person.FirstName;
             output.LastName = person.LastName;
-            output.EmailAddress = $"{person.FirstName.Substring(0, 1)}{person.LastName}@acme.com";
+            output.EmailAddress = $"{person.FirstName.Substring(0, 1)}{person.LastName}@acmeCorp.com";
+
+            output.IsManager = true;
 
             return output;
         }
